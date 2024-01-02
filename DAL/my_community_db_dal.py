@@ -18,7 +18,7 @@ class MyCommunityDBDal:
             result_list = list(self.__collection_users.find({}))
             return result_list
         except Exception as e:
-            return [{"Error":"An error occurred"}]
+            return [{"Error":"An error occurred, func get_all_users"}]
 
     def get_user_email(self,userObj):
         try:
@@ -31,9 +31,10 @@ class MyCommunityDBDal:
     def insert_new_employee(self,userObj):
         try:
             self.__collection_users.insert_one(userObj) 
-            return [{"Success":"created with id: {}".format(str(userObj["_id"]))}]
+            print("Success: created with id:"+str(userObj["_id"]))
+            return "Created with id: "+ str(userObj["_id"])
         except Exception as e:
-            return [{"Error":"An error occurred"}]
+            return [{"Error":"An error occurred insert_new_employee"}]
             
 #     def get_one_employee(self,id):
 #         try:

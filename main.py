@@ -9,8 +9,8 @@ class JSONEncoder(json.JSONEncoder):
     def default(self, obj) :
         if isinstance(obj, ObjectId):
             return str(obj)
-        if isinstance(obj, (datetime, date)):
-            return obj.isoformat()
+        # if isinstance(obj, (datetime, date)):
+            #     return obj.isoformat()
         return json.JSONEncoder.default(self,obj)
     
 app = Flask(__name__)
@@ -26,3 +26,6 @@ app.register_blueprint(usr, url_prefix="/user")
 
 
 app.run()
+
+
+

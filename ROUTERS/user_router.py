@@ -38,12 +38,12 @@ users_bl = UserBL()
 
 @usr.route("/", methods=['POST'])
 def post_user():
-    print('im here')
     usrObj=request.json
-    print('usrObj:')
-    print(usrObj)
-    if usrObj["byKey"]=='signIn':
+    print(usrObj["byKey"])
+    if usrObj["byKey"]=='signUp':
         result = users_bl.add_new_user(usrObj)
+        print(result)
+        print(jsonify(result))
     elif usrObj["byKey"]=='logIn':
         result = users_bl.logIn_user(usrObj)
     print(result)  

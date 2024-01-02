@@ -83,8 +83,6 @@ class UserBL:
         if this_user_obj == []:
             return [{"Error": "The user was not found"}]
         for this_user in this_user_obj:
-            print(this_user)
-            print(this_user)
             if "Error" in this_user:
                 return [{"Error": "The user was not found"}]
             elif this_user["password"] == obj_dict["password"]:
@@ -105,16 +103,18 @@ class UserBL:
         
         obj_dict = {"email":usrObj["email"],"password": usrObj["password"]}
         users_from_db = self.__mycommunity_db_dal.get_all_users()
+        result = []
         for usr in users_from_db:
-            print(usr)
             if users_from_db != []:
                 if "Error" in usr:
-                    return [usr]
-                elif usr["email"]==obj_dict["email"] :
-                    return [{"Error": "There is an user with the same name"}]
-                    break
-
-        result = self.__mycommunity_db_dal.insert_new_employee(obj_dict)
+                    print('Error')
+                    result = [usr]
+            
+                elif str(usr["email"])==str(obj_dict["email"]): 
+                    result =  [{"Error": "There is an user with the same name"}]
+              
+                else:
+                    result = self.__mycommunity_db_dal.insert_new_employee(obj_dict)
         return result
 
     # def update_employee(self,id,obj):
