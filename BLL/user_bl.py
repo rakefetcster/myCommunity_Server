@@ -86,10 +86,10 @@ class UserBL:
             if "Error" in this_user:
                 return [{"Error": "The user was not found"}]
             elif this_user["password"] == obj_dict["password"]:
-                    return [{"Success": "The user was found"}]
+                return [{"appName":str(this_user["appName"])}]
             else:
                 return [{"Error": "The password is incorrect"}]
-            
+        
            
     def add_new_user(self,usrObj):
         obj_dict = dict()
@@ -101,20 +101,23 @@ class UserBL:
         
         # else:
         
-        obj_dict = {"email":usrObj["email"],"password": usrObj["password"]}
+        obj_dict = {"appName":usrObj["appName"],"email":usrObj["email"],"password": usrObj["password"]}
         users_from_db = self.__mycommunity_db_dal.get_all_users()
+        print('users_from_db:')
+        print(users_from_db)
         result = []
-        for usr in users_from_db:
-            if users_from_db != []:
+        if users_from_db != []:
+            for usr in users_from_db:
                 if "Error" in usr:
                     print('Error')
                     result = [usr]
-            
-                elif str(usr["email"])==str(obj_dict["email"]): 
+                elif str(usr["email"])==str(obj_dict["email"] or usr["appName"])==str(obj_dict["appName"]): 
                     result =  [{"Error": "There is an user with the same name"}]
               
-                else:
-                    result = self.__mycommunity_db_dal.insert_new_employee(obj_dict)
+            
+        print('insert_new_employee')
+        result = self.__mycommunity_db_dal.insert_new_employee(obj_dict)
+        print(result)
         return result
 
     # def update_employee(self,id,obj):
