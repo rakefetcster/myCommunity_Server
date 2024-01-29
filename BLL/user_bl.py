@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from DAL.my_community_db_dal import MyCommunityDBDal
 from datetime import date
 
@@ -76,31 +75,9 @@ class UserBL:
     #                 "shifts":shift_list
     #                 })
     #     return emp_dict
-    def logIn_user(self,usrObj):
-        obj_dict = {"email":usrObj["email"],"password": usrObj["password"]}
-        this_user_obj = self.__mycommunity_db_dal.get_user_email(obj_dict)
-        print(this_user_obj)
-        if this_user_obj == []:
-            return [{"Error": "The user was not found"}]
-        for this_user in this_user_obj:
-            if "Error" in this_user:
-                return [{"Error": "The user was not found"}]
-            elif this_user["password"] == obj_dict["password"]:
-                return [{"appName":str(this_user["appName"])}]
-            else:
-                return [{"Error": "The password is incorrect"}]
-        
-           
+               
     def add_new_user(self,usrObj):
         obj_dict = dict()
-        # use_obj = self.__mycommunity_db_dal.get_department_by_name(usrObj["department_name"])
-        # if use_obj == None:
-        #     return [{"Error": "The employee was not created - the department name is missing or the employee already exists in the system"}]
-        # elif "Error" in use_obj:
-        #     return [use_obj]
-        
-        # else:
-        
         obj_dict = {"appName":usrObj["appName"],"email":usrObj["email"],"password": usrObj["password"]}
         users_from_db = self.__mycommunity_db_dal.get_all_users()
         print('users_from_db:')
@@ -113,8 +90,6 @@ class UserBL:
                     result = [usr]
                 elif str(usr["email"])==str(obj_dict["email"] or usr["appName"])==str(obj_dict["appName"]): 
                     result =  [{"Error": "There is an user with the same name"}]
-              
-            
         print('insert_new_employee')
         result = self.__mycommunity_db_dal.insert_new_employee(obj_dict)
         print(result)

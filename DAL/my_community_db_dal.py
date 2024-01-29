@@ -19,7 +19,14 @@ class MyCommunityDBDal:
             return result_list
         except Exception as e:
             return [{"Error":"An error occurred, func get_all_users"}]
-
+    
+    def get_user_by_id(self,id):
+        try:
+            result_list = list(self.__collection_users.find({"id":ObjectId(id)})) 
+            return result_list
+        except Exception as e:
+            return []
+            
     def get_user_email(self,userObj):
         try:
             print(userObj["email"])
