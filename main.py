@@ -5,7 +5,7 @@ from flask_cors import CORS
 from flask_cors import CORS
 from ROUTERS.user_router import usr
 from ROUTERS.auth_router import auth
-
+from ROUTERS.kafka_router import kafka
 class JSONEncoder(json.JSONEncoder):
     def default(self, obj) :
         if isinstance(obj, ObjectId):
@@ -20,7 +20,7 @@ app.url_map.strict_slashes = False
 CORS(app)
 app.register_blueprint(auth, url_prefix="/auth")
 app.register_blueprint(usr, url_prefix="/user")
-# app.register_blueprint(shi_emp, url_prefix="/shift_emp")
+app.register_blueprint(kafka, url_prefix="/tokafka")
 # app.register_blueprint(dep, url_prefix="/department")
 # app.register_blueprint(shi, url_prefix="/shift")
 # app.register_blueprint(auth, url_prefix="/auth")
