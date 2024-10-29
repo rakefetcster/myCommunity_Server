@@ -1,19 +1,19 @@
 import jwt
 from DAL.my_community_db_dal import MyCommunityDBDal
-
+from DAL.kafka_producer import ProducerDal
 class AuthBL:
     def __init__(self):
         self.__key = "server_my_community"
         self.__algorithm = "HS256"
         self.__mycommunity_db_dal = MyCommunityDBDal()
+        self.__kafka_db_dal = ProducerDal("users")
     
     def get_token(self,username,password):
-        user_Obj = self.__check_user(username,password)
-        print(user_Obj)
+        this_full_user = self.__check_user(username,password)
         token=None
-        if user_Obj is not None:
-            token=jwt.encode({"userid":str(user_Obj['_id'])},self.__key,self.__algorithm)
-        return token,user_Obj['appName']
+        if this_full_user is not None:
+            token=jwt.encode({"userid": str(this_full_user["_id"])},self.__key,self.__algorithm)
+        return token,this_full_user["appName"]
       
     def verify_token(self,token):
         data = jwt.decode(token, self.__key,self.__algorithm)
@@ -25,23 +25,23 @@ class AuthBL:
             return True
       
     def __check_user(self,username,password):
-        res_list = self.logIn_user(username,password)
-        if "Error" in res_list:
-            return res_list
+        this_full_user = self.logIn_user(username,password)
+        if "Error" in this_full_user:
+            return this_full_user
         else:
-            return res_list
+            return this_full_user
     
     def logIn_user(self,username,password):
         obj_dict = {"email":username,"password": password}
+        #db
         this_user_obj = self.__mycommunity_db_dal.get_user_email(obj_dict)
-        print(this_user_obj)
         if this_user_obj == []:
             return [{"Error": "The user was not found"}]
-        for this_user in this_user_obj:
-            if "Error" in this_user:
+        for this_full_user in this_user_obj:
+            if "Error" in this_full_user:
                 return [{"Error": "The user was not found"}]
-            elif this_user["password"] == obj_dict["password"] and this_user["email"] == obj_dict["email"]:
-                return this_user
+            elif this_full_user["password"] == obj_dict["password"] and this_full_user["email"] == obj_dict["email"]:
+                return this_full_user
             else:
                 return [{"Error": "The password is incorrect"}]
             
@@ -49,8 +49,6 @@ class AuthBL:
         obj_dict = dict()
         obj_dict = {"appName":usrObj["appName"],"email":usrObj["email"],"password": usrObj["password"]}
         users_from_db = self.__mycommunity_db_dal.get_all_users()
-        print('users_from_db:')
-        print(users_from_db)
         result = []
         if users_from_db != []:
             for usr in users_from_db:
@@ -61,7 +59,5 @@ class AuthBL:
                     result =  [{"Error": "There is an user with the same name"}]
               
             
-        print('insert_new_employee')
         result = self.__mycommunity_db_dal.insert_new_employee(obj_dict)
-        print(result)
         return result

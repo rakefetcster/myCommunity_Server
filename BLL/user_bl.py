@@ -1,80 +1,10 @@
 from DAL.my_community_db_dal import MyCommunityDBDal
 from datetime import date
-
 class UserBL:
     def __init__(self):
         self.__mycommunity_db_dal=MyCommunityDBDal()
-
-    # def get_all_employee(self,user_fullName):     
-    #     employee_from_db = self.__mycommunity_db_dal.get_all_employee()
-    #     emp_list = list()
-    #     for employee in employee_from_db:
-    #         if "Error" in employee:
-    #             return employee_from_db
-    #         else:
-    #             shift_list = list()
-    #             emp_dict = dict()
-    #             shift_emp = ''
-    #             if "departmentId" in employee:
-    #                 department = self.__mycommunity_db_dal.get_one_department(employee["departmentId"])
-                    
-    #                 emp_dict.update({"departmentId": employee["departmentId"]})
-    #                 if "Error" in department:
-    #                     return [department]
-    #                 elif department != None:
-    #                     emp_dict.update({"Department":department["Name"]})  
-    #             shift_emp = self.__mycommunity_db_dal.get_shift_emp_by_empId(employee["_id"])       
-    #             for shiftId in shift_emp:
-    #                 if "Error" in shiftId:
-    #                     return [shiftId]
-    #                 this_shift = self.__mycommunity_db_dal.get_one_shift(shiftId["shiftId"])
-    #                 if "Error" in this_shift:
-    #                     return [this_shift]
-    #                 date = str(this_shift["date"].day)+"/"+str(this_shift["date"].month)+"/"+str(this_shift["date"].year)
-    #                 shift_list.append({
-    #                     "id": this_shift["_id"],
-    #                     "date":date,
-    #                     "starting_hour":this_shift["starting_hour"],
-    #                     "ending_hour":this_shift["ending_hour"]
-    #                 })
-    #             emp_dict.update({
-    #                 "id": employee["_id"],
-    #                 "FirstName": employee["FirstName"],
-    #                     "LastName" : employee["LastName"],
-    #                     "StartWorkYear":employee["StartWorkYear"],
-    #                     "shifts":shift_list,
-    #                     "user_name":user_fullName
-                        
-    #                     })
-    #             emp_list.append(emp_dict)
-    #     return emp_list
-        
     
-    # def get_employee_by_id(self,id):
-    #     dep_name = ''
-    #     emp_dict = dict()
-    #     shift_list = list()
-    #     employee = self.__mycommunity_db_dal.get_one_employee(id)
-    #     if "Error" in employee:
-    #         return [employee]
-    #     if "departmentId" in employee:
-    #         department = self.__mycommunity_db_dal.get_one_department(employee["departmentId"])
-    #         if "Error" in department:
-    #             return [department]
-    #         elif department != None:
-    #             emp_dict.update({"Department": str(department["Name"])})
-    #         emp_dict.update({"departmentId":employee["departmentId"]})
-    #     shift_emp = self.__mycommunity_db_dal.get_shift_emp_by_empId(employee["_id"])       
-    #     for shiftId in shift_emp:
-    #         shift_list.append(self.__mycommunity_db_dal.get_one_shift(shiftId["shiftId"]))
-    #     emp_dict.update({
-    #             "id": employee["_id"],
-    #             "FirstName": employee["FirstName"],
-    #                 "LastName" : employee["LastName"],
-    #                 "StartWorkYear":employee["StartWorkYear"],
-    #                 "shifts":shift_list
-    #                 })
-    #     return emp_dict
+    
                
     def add_new_user(self,usrObj):
         obj_dict = dict()
@@ -88,7 +18,7 @@ class UserBL:
                 if "Error" in usr:
                     print('Error')
                     result = [usr]
-                elif str(usr["email"])==str(obj_dict["email"] or usr["appName"])==str(obj_dict["appName"]): 
+                elif str(usr["email"])==str(obj_dict["email"] or usr["appName"])==obj_dict["appName"]: 
                     result =  [{"Error": "There is an user with the same name"}]
         print('insert_new_employee')
         result = self.__mycommunity_db_dal.insert_new_employee(obj_dict)

@@ -4,12 +4,8 @@ from bson import ObjectId
 
 class MyCommunityDBDal:
     def __init__(self):
-        self.__client = MongoClient(port=27017)
+        self.__client = MongoClient("mongodb://localhost:27017")
         self.__db = self.__client["mycommunity"]
-        # self.__collection_emp = self.__db["employees"]
-        # self.__collection_dep = self.__db["departments"]
-        # self.__collection_shift = self.__db["shifts"]
-        # self.__collection_shiftemp = self.__db["shift_emp"]
         self.__collection_users = self.__db["users"]
 
     def get_all_users(self):
