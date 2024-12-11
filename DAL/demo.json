@@ -1,0 +1,275 @@
+{
+    "status": "OK",
+    "request_id": "924ce86c-1ad1-47b8-bbe4-80a56426c2b3",
+    "parameters": {
+        "query": "restaurants in Acre, Israel",
+        "language": "en",
+        "region": "hb",
+        "lat": 37.09024,
+        "lng": -95.712891,
+        "zoom": 13,
+        "limit": 20,
+        "offset": 0,
+        "extract_emails_and_contacts": false
+    },
+    "data": [
+        {
+            "business_id": "0x151dc859875438dd:0x8a0735b65bb6b435",
+            "google_id": "0x151dc859875438dd:0x8a0735b65bb6b435",
+            "place_id": "ChIJ3ThUh1nIHRURNbS2W7Y1B4o",
+            "google_mid": "/g/1wn79rz0",
+            "phone_number": "+97249552212",
+            "name": "Uri Buri",
+            "latitude": 32.9201,
+            "longitude": 35.0668238,
+            "full_address": "Uri Buri, Ha-Hagana St 2, Acre, Israel",
+            "review_count": 4670,
+            "rating": 4.7,
+            "timezone": "Asia/Jerusalem",
+            "opening_status": "Opens soon ⋅ 12 pm",
+            "working_hours": {
+                "Sunday": ["12–10:30 pm"],
+                "Monday": ["12–10:30 pm"],
+                "Tuesday": ["12–10:30 pm"],
+                "Wednesday": ["12–10:30 pm"],
+                "Thursday": ["12–10:30 pm"],
+                "Friday": ["12–11 pm"],
+                "Saturday": ["12–10:30 pm"]
+            },
+            "website": "http://www.2eat.co.il/uriburi/mobile/menu.aspx?pid=5606",
+            "verified": true,
+            "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x151dc859875438dd:0x8a0735b65bb6b435",
+            "cid": "9945977359410050101",
+            "reviews_link": "https://search.google.com/local/reviews?placeid=ChIJ3ThUh1nIHRURNbS2W7Y1B4o&q=restaurants+in+Acre,+Israel&authuser=0&hl=en&gl=DE",
+            "owner_id": "111646994621858537625",
+            "owner_link": "https://maps.google.com/maps/contrib/111646994621858537625",
+            "owner_name": "Uri Buri",
+            "booking_link": null,
+            "reservations_link": null,
+            "business_status": "OPEN",
+            "type": "Seafood restaurant",
+            "subtypes": ["Seafood restaurant"],
+            "photos_sample": [
+                {
+                    "photo_id": "AF1QipOHTXBLDN6Qn-Gsx4_CklXfpZikaSIuBEJKU7gd",
+                    "photo_url": "https://lh5.googleusercontent.com/p/AF1QipOHTXBLDN6Qn-Gsx4_CklXfpZikaSIuBEJKU7gd",
+                    "photo_url_large": "https://lh5.googleusercontent.com/p/AF1QipOHTXBLDN6Qn-Gsx4_CklXfpZikaSIuBEJKU7gd=w4624-h3468-k-no",
+                    "video_thumbnail_url": null,
+                    "latitude": 32.928006499999995,
+                    "longitude": 35.0695586,
+                    "type": "photo",
+                    "photo_datetime_utc": "2023-05-30T00:00:00.000Z",
+                    "photo_timestamp": 1685404800
+                }
+            ],
+            "reviews_per_rating": null,
+            "photo_count": 7003,
+            "about": {
+                "summary": null,
+                "details": {
+                    "Service options": {
+                        "Outdoor seating": true,
+                        "Dine-in": true,
+                        "Delivery": false
+                    },
+                    "Accessibility": {
+                        "Wheelchair-accessible car park": true,
+                        "Wheelchair-accessible entrance": true,
+                        "Wheelchair-accessible seating": true,
+                        "Wheelchair-accessible toilet": true
+                    },
+                    "Offerings": {
+                        "Alcohol": true,
+                        "Beer": true,
+                        "Cocktails": true,
+                        "Coffee": true,
+                        "Late-night food": true,
+                        "Small plates": true,
+                        "Spirits": true,
+                        "Vegetarian options": true,
+                        "Wine": true
+                    },
+                    "Dining options": {
+                        "Lunch": true,
+                        "Dinner": true,
+                        "Catering": true,
+                        "Dessert": true,
+                        "Seating": true
+                    },
+                    "Amenities": {
+                        "Toilets": true,
+                        "Wi-Fi": true
+                    },
+                    "Atmosphere": {
+                        "Casual": true,
+                        "Cosy": true
+                    },
+                    "Crowd": {
+                        "Family friendly": true,
+                        "Groups": true,
+                        "LGBTQ+ friendly": true,
+                        "Transgender safe space": true
+                    },
+                    "Planning": {
+                        "Reservations required": true,
+                        "Accepts reservations": true
+                    },
+                    "Payments": {
+                        "Credit cards": true,
+                        "Debit cards": true
+                    },
+                    "Children": {
+                        "Good for kids": true,
+                        "High chairs": true
+                    },
+                    "Parking": {
+                        "Free of charge street parking": true,
+                        "Free parking lot": true,
+                        "Parking": true
+                    }
+                }
+            },
+            "address": "Ha-Hagana St 2, Acre, Israel",
+            "order_link": null,
+            "price_level": "€€€",
+            "district": null,
+            "street_address": "Ha-Hagana St 2",
+            "city": "Acre",
+            "zipcode": null,
+            "state": null,
+            "country": "IL"
+        },{
+            "business_id": "0x151dc97dfe269779:0x805efe224a86551b",
+            "google_id": "0x151dc97dfe269779:0x805efe224a86551b",
+            "place_id": "ChIJeZcm_n3JHRURG1WGSiL-XoA",
+            "google_mid": "/g/11f8gkcgx7",
+            "phone_number": "+97246289115",
+            "name": "MINA",
+            "latitude": 32.9281449,
+            "longitude": 35.0690641,
+            "full_address": "MINA, Ha-Hagana St 2, Acre, 2403800, Israel",
+            "review_count": 811,
+            "rating": 4.3,
+            "timezone": "Asia/Jerusalem",
+            "opening_status": "Open ⋅ Closes 10:15 pm",
+            "working_hours": {
+              "Sunday": [
+                "9 am–10:15 pm"
+              ],
+              "Monday": [
+                "9 am–10:15 pm"
+              ],
+              "Tuesday": [
+                "9 am–10:15 pm"
+              ],
+              "Wednesday": [
+                "9 am–10:15 pm"
+              ],
+              "Thursday": [
+                "9 am–11 pm"
+              ],
+              "Friday": [
+                "9 am–11 pm"
+              ],
+              "Saturday": [
+                "9 am–11 pm"
+              ]
+            },
+            "website": "https://www.rest.co.il/rest/80298781",
+            "verified": true,
+            "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x151dc97dfe269779:0x805efe224a86551b",
+            "cid": "9250110107898238235",
+            "reviews_link": "https://search.google.com/local/reviews?placeid=ChIJeZcm_n3JHRURG1WGSiL-XoA&q=restaurants+in+Acre,+Israel&authuser=0&hl=en&gl=DE",
+            "owner_id": "109052160747497195863",
+            "owner_link": "https://maps.google.com/maps/contrib/109052160747497195863",
+            "owner_name": "MINA",
+            "booking_link": null,
+            "reservations_link": null,
+            "business_status": "OPEN",
+            "type": "Restaurant",
+            "subtypes": [
+              "Restaurant"
+            ],
+            "photos_sample": [
+              {
+                "photo_id": "AF1QipPUAfAKz-kAe1vshroHAfBit2mXtMkykPE6H7tR",
+                "photo_url": "https://lh5.googleusercontent.com/p/AF1QipPUAfAKz-kAe1vshroHAfBit2mXtMkykPE6H7tR",
+                "photo_url_large": "https://lh5.googleusercontent.com/p/AF1QipPUAfAKz-kAe1vshroHAfBit2mXtMkykPE6H7tR=w2048-h1153-k-no",
+                "video_thumbnail_url": null,
+                "latitude": 32.928006499999995,
+                "longitude": 35.0695586,
+                "type": "photo",
+                "photo_datetime_utc": "2023-07-16T00:00:00.000Z",
+                "photo_timestamp": 1689465600
+              }
+            ],
+            "reviews_per_rating": null,
+            "photo_count": 471,
+            "about": {
+              "summary": null,
+              "details": {
+                "Service options": {
+                  "Outdoor seating": true,
+                  "Takeaway": true,
+                  "Dine-in": true
+                },
+                "Accessibility": {
+                  "Wheelchair-accessible car park": true,
+                  "Wheelchair-accessible entrance": true,
+                  "Wheelchair-accessible seating": true
+                },
+                "Offerings": {
+                  "Alcohol": true,
+                  "Beer": true,
+                  "Cocktails": true,
+                  "Coffee": true,
+                  "Small plates": true,
+                  "Spirits": true,
+                  "Wine": true
+                },
+                "Dining options": {
+                  "Lunch": true,
+                  "Dinner": true,
+                  "Catering": true,
+                  "Dessert": true,
+                  "Seating": true
+                },
+                "Amenities": {
+                  "Toilets": true
+                },
+                "Atmosphere": {
+                  "Casual": true,
+                  "Cosy": true
+                },
+                "Crowd": {
+                  "Groups": true
+                },
+                "Planning": {
+                  "Accepts reservations": true
+                },
+                "Payments": {
+                  "Credit cards": true
+                },
+                "Children": {
+                  "Good for kids": true,
+                  "High chairs": true,
+                  "Kids' menu": true
+                },
+                "Parking": {
+                  "Paid street parking": true,
+                  "Parking": true
+                }
+              }
+            },
+            "address": "Ha-Hagana St 2, Acre, 2403800, Israel",
+            "order_link": null,
+            "price_level": "€€",
+            "district": null,
+            "street_address": "Ha-Hagana St 2",
+            "city": "Acre",
+            "zipcode": "2403800",
+            "state": null,
+            "country": "IL"
+          }
+    ]
+}
