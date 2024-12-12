@@ -2,13 +2,11 @@ from DAL.kafka_producer import ProducerDal
 from DAL.kafka_consumer import KafkaStringConsumer
 import requests
 from CONFIGURATION.header_key import headers_key
-from DAL.jsons import workingJsons
 import json
 import pandas as pd
 
 
 url = "https://local-business-data.p.rapidapi.com/search"
-working_jsons = workingJsons()
 
 class KafkaBL:
     def __init__(self):
@@ -64,13 +62,13 @@ class KafkaBL:
                 print("search:"+search)
                 querystring = {"query":search,"limit":"20","zoom":"13","language":"en","region":"hb","extract_emails_and_contacts":"false"}
                 #from api
-                headers = headers_key()
-                data_api = requests.get(url, headers=headers, params=querystring)
-                data = data_api.json()
-                #from my json
-                # with open('DAL/demo.json', 'r') as file:
-                #     data = json.load(file) 
-                # print(file_name)
+                # headers = headers_key()
+                # data_api = requests.get(url, headers=headers, params=querystring)
+                # data = data_api.json()
+                # from my json
+                with open('DAL/demo.json', 'r') as file:
+                    data = json.load(file) 
+                print(file_name)
                 combined_message = {
                     "api_data": data, #json
                     "additional_info": file_name 
@@ -78,7 +76,7 @@ class KafkaBL:
                 resp = self.my_community.producer_msg(combined_message)
                 data_json = self.my_community_res.consume_messages()
                 if data_json:
-                    print(data_json)
+                    # print(data_json)
                     return data_json  # Return it in a dictionary format
                 else:
                     return {'error': 'No data found'}  # Handle cases where no data is parsed
@@ -89,14 +87,5 @@ class KafkaBL:
         finally:
             self.is_data_exist_res.close()
         
-
-        # local json
-       
-        # with open("DAL/food.json") as json_file:
-        #     json_data = json.load(json_file)
-        #     print(json_data)
-        # response = working_jsons.food_json()
-        # resp = self.my-community.producer_msg(response.json())
-        # return resp
         return {}
     
