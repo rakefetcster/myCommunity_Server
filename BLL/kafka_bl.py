@@ -44,7 +44,7 @@ class KafkaBL:
         try:
             is_exist = self.is_data_exist_res.consume_messages()  # Start consuming and processing messages
             print(f"Is data exist: {is_exist}")
-            if is_exist == 'exist':
+            if is_exist == 'exists':
                 resp = self.my_community.producer_msg(file_name)
                 data_json = self.my_community_res.consume_messages()
                 if data_json:
@@ -65,10 +65,12 @@ class KafkaBL:
                 # headers = headers_key()
                 # data_api = requests.get(url, headers=headers, params=querystring)
                 # data = data_api.json()
+                
                 # from my json
                 with open('DAL/demo.json', 'r') as file:
                     data = json.load(file) 
                 print(file_name)
+                
                 combined_message = {
                     "api_data": data, #json
                     "additional_info": file_name 
