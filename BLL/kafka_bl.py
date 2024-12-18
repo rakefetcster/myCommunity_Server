@@ -48,7 +48,6 @@ class KafkaBL:
                 resp = self.my_community.producer_msg(file_name)
                 data_json = self.my_community_res.consume_messages()
                 if data_json:
-                    print("im here")
                     return {'data_json': data_json}  # Return it in a dictionary format
                 else:
                     return {'error': 'No data found'}  # Handle cases where no data is parsed
@@ -61,12 +60,12 @@ class KafkaBL:
                     search = item +" in "+list_places[activeObj["city"]]+", Israel"
                 print("search:"+search)
                 querystring = {"query":search,"limit":"20","zoom":"13","language":"en","region":"hb","extract_emails_and_contacts":"false"}
-                #from api
+                #***********************from api
                 # headers = headers_key()
                 # data_api = requests.get(url, headers=headers, params=querystring)
                 # data = data_api.json()
                 
-                # from my json
+                #***********************from my json
                 with open('DAL/demo.json', 'r') as file:
                     data = json.load(file) 
                 print(file_name)
